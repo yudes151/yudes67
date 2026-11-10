@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Моё Семейное Древо</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-decoration">
+        <div class="starfield" id="starfield"></div>
+        <div class="shooting-stars-container">
+            <div class="shooting-star star-1"></div>
+            <div class="shooting-star star-2"></div>
+            <div class="shooting-star star-3"></div>
+        </div>
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <!-- ─── ЭКРАН ПРИВЕТСТВИЯ («ЗАЙТИ В СЕМЬЮ») ─── -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-backdrop"></div>
+        <div class="welcome-card">
+            <div class="welcome-emblem">
+                <div class="emblem-halo"></div>
+                <div class="emblem-icon">🌌</div>
+            </div>
+
+            <h1 class="welcome-title" id="welcomeTitle">Семейное Древо</h1>
+            <p class="welcome-subtitle" id="welcomeSubtitle">
+                История нашей семьи сквозь поколения. Сохраняйте память, изучайте свои корни и передавайте историю детям.
+            </p>
+
+            <!-- Переключатель языка на заставке -->
+            <div class="welcome-lang-box">
+                <span class="welcome-lang-label" id="welcomeLangLabel">Выберите язык / Tilni tanlang:</span>
+                <div class="lang-tabs" id="welcomeLangTabs">
+                    <button type="button" class="lang-tab-btn active" data-lang="ru">🇷🇺 Русский</button>
+                    <button type="button" class="lang-tab-btn" data-lang="uz">🇺🇿 O'zbekcha</button>
+                </div>
+            </div>
+
+            <!-- Главная кнопка входа -->
+            <button type="button" class="btn-enter-family" id="btnEnterFamily">
+                <span class="btn-enter-sparkle">🚀</span>
+                <span class="btn-enter-text" id="enterFamilyText">Зайти в семью</span>
+                <span class="btn-enter-arrow">➔</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ─── Верхняя панель ─── -->
+    <header class="header">
+        <h1 id="headerTitle">🌌 Моё Семейное Древо</h1>
+        <p class="subtitle" id="headerSubtitle">История нашей семьи сквозь поколения</p>
+        
+        <div class="toolbar">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Поиск по имени, профессии, музыке..." autocomplete="off">
+                <button class="search-clear" id="searchClear" title="Очистить">&times;</button>
+            </div>
+
+            <!-- Перевод / Тил танлаш (RU / UZ) -->
+            <div class="lang-toolbar-switch" id="headerLangSwitch" title="Перевод: Русский / O'zbekcha">
+                <button type="button" class="lang-tool-btn active" data-lang="ru">🇷🇺 RU</button>
+                <button type="button" class="lang-tool-btn" data-lang="uz">🇺🇿 UZ</button>
+            </div>
+
+            <!-- Кнопка перехода на экран входа -->
+            <button class="btn btn-welcome-gate" id="btnWelcomeGate" title="Открыть заставку семьи">
+                <span>🏠</span> <span id="homeLabel">Семья</span>
+            </button>
+
+            <!-- Стиль / Тема -->
+            <button class="btn btn-theme" id="btnThemeToggle" title="Сменить стиль оформления">
+                <span>🎨</span> <span id="themeLabel">Стиль</span>
+            </button>
+
+            <!-- Добавить -->
+            <button class="btn btn-add" id="btnAddMember">
+                <span>＋</span> <span id="btnAddLabel">Добавить</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ─── Дерево ─── -->
+    <main class="tree-container" id="treeContainer"></main>
+
+    <!-- ─── Модалка просмотра ─── -->
+    <div class="modal-overlay" id="viewOverlay">
+        <div class="modal" id="viewModal">
+            <button class="modal-close" id="viewClose">&times;</button>
+            <div class="modal-photo-wrapper">
+                <img class="modal-photo" id="viewPhoto" src="" alt="">
+            </div>
+            <div class="modal-info">
+                <h2 class="modal-name" id="viewName"></h2>
+                <p class="modal-relation" id="viewRelation"></p>
+
+                <!-- Чей сын / Чья дочь (для двоюродных и родственников) -->
+                <div class="modal-whose-badge" id="viewWhoseRow" style="display:none;">
+                    <span class="whose-icon" id="viewWhoseIcon">👨‍👩‍👦</span>
+                    <span id="viewWhoseLabel">Чей сын / Чья дочь:</span>
+                    <strong id="viewWhoseValue"></strong>
+                </div>
+
+                <div class="modal-profession-badge" id="viewProfessionRow" style="display:none;">
+                    <span class="prof-icon">💼</span>
+                    <span id="viewProfession"></span>
+                </div>
+                <div class="modal-dates">
+                    <div class="date-item">
+                        <span class="date-label" id="viewBirthLabel">📅 Дата рождения</span>
+                        <span class="date-value" id="viewBirth"></span>
+                    </div>
+                    <div class="date-item" id="viewDeathRow" style="display:none;">
+                        <span class="date-label" id="viewDeathLabel">🕊️ Дата смерти</span>
+                        <span class="date-value" id="viewDeath"></span>
+                    </div>
+                </div>
+                <div class="modal-music-box" id="viewMusicRow" style="display:none;">
+                    <span class="music-icon">🎵</span>
+                    <div class="music-details">
+                        <span class="music-label" id="viewMusicLabel">Любимая музыка:</span>
+                        <span class="music-value" id="viewMusic"></span>
+                    </div>
+                </div>
+                <p class="modal-bio" id="viewBio"></p>
+                <div class="modal-actions">
+                    <button class="btn btn-add-rel" id="btnModalAddRel">＋ Родственник</button>
+                    <button class="btn btn-edit" id="btnEditPerson">✏️ Редактировать</button>
+                    <button class="btn btn-delete" id="btnDeletePerson">🗑️ Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Модалка добавления/редактирования ─── -->
+    <div class="modal-overlay" id="formOverlay">
+        <div class="modal modal-form" id="formModal">
+            <button class="modal-close" id="formClose">&times;</button>
+            <h2 class="form-title" id="formTitle">Добавить члена семьи</h2>
+            
+            <div class="relative-banner" id="relativeBanner" style="display:none;">
+                <span class="banner-icon">🔗</span>
+                <span class="banner-text" id="relativeBannerText"></span>
+                <button type="button" class="btn-clear-relative" id="btnClearRelative" title="Сбросить связь">&times;</button>
+            </div>
+            
+            <form id="personForm" autocomplete="off">
+                <!-- Фото -->
+                <div class="form-photo-section">
+                    <div class="form-photo-preview" id="photoPreview">
+                        <span class="form-photo-placeholder">📷</span>
+                        <img class="form-photo-img" id="photoPreviewImg" src="" alt="" style="display:none;">
+                    </div>
+                    <label class="btn btn-photo" for="photoInput" id="labelPhoto">📸 Загрузить фото</label>
+                    <input type="file" id="photoInput" accept="image/*" style="display:none;">
+                    <button type="button" class="btn btn-remove-photo" id="btnRemovePhoto" style="display:none;">Убрать фото</button>
+                </div>
+
+                <!-- Имя -->
+                <div class="form-group">
+                    <label class="form-label" id="labelName">Имя *</label>
+                    <input type="text" class="form-input" id="inputName" placeholder="Введите имя" required>
+                </div>
+
+                <!-- Кем приходится -->
+                <div class="form-group">
+                    <label class="form-label" id="labelRelation">Кем приходится *</label>
+                    <select class="form-input form-select" id="inputRelation" required>
+                        <!-- Будет заполнено динамически на выбранном языке (RU/UZ) -->
+                    </select>
+                </div>
+
+                <!-- Чей сын / Чья дочь (для двоюродных и других) -->
+                <div class="form-group" id="groupParentWhose">
+                    <label class="form-label" id="labelParentWhose">Чей сын / Чья дочь?</label>
+                    <div class="input-with-select">
+                        <input type="text" class="form-input" id="inputParentWhose" placeholder="Например: Дяди Алишера, Тёти Гули, Папы...">
+                        <select class="form-input form-select-mini" id="selectParentPreset">
+                            <option value="">⚡ Выбрать из родственников</option>
+                        </select>
+                    </div>
+                    <span class="form-hint" id="hintParentWhose">Укажите имя родителя (например: «Дяди Алишера» или «Тёти Лолы»)</span>
+                </div>
+
+                <!-- Сторона семьи / Ветвь -->
+                <div class="form-group">
+                    <label class="form-label" id="labelSide">🌿 Сторона семьи (Ветвь)</label>
+                    <select class="form-input form-select" id="inputSide">
+                        <option value="auto" id="optSideAuto">⚡ Автоопределение по родству</option>
+                        <option value="paternal" id="optSidePat">👨 Линия Папы (Отцовская)</option>
+                        <option value="maternal" id="optSideMat">👩 Линия Мамы (Материнская)</option>
+                        <option value="center" id="optSideCenter">🌟 Общая / Центральная (Я, дети, супруги, двоюродные)</option>
+                    </select>
+                </div>
+
+                <!-- Профессия / Род занятий -->
+                <div class="form-group">
+                    <label class="form-label" id="labelProfession">💼 Профессия / Род деятельности</label>
+                    <input type="text" class="form-input" id="inputProfession" placeholder="Например: Программист, Врач, Учитель">
+                </div>
+
+                <!-- Дата рождения -->
+                <div class="form-group">
+                    <label class="form-label" id="labelBirth">Дата рождения</label>
+                    <input type="text" class="form-input" id="inputBirth" placeholder="Например: 15 марта 1990">
+                </div>
+
+                <!-- Дата смерти -->
+                <div class="form-group">
+                    <label class="form-label" id="labelDeath">Дата смерти <span class="form-hint" id="hintDeath">(оставьте пустым если жив/а)</span></label>
+                    <input type="text" class="form-input" id="inputDeath" placeholder="Например: 20 декабря 2020">
+                </div>
+
+                <!-- Любимая музыка -->
+                <div class="form-group">
+                    <label class="form-label" id="labelMusic">🎵 Любимая музыка / трек</label>
+                    <input type="text" class="form-input" id="inputMusic" placeholder="Например: Queen — Bohemian Rhapsody, Джаз">
+                </div>
+
+                <!-- Описание -->
+                <div class="form-group">
+                    <label class="form-label" id="labelBio">Описание</label>
+                    <textarea class="form-input form-textarea" id="inputBio" placeholder="Расскажите немного о человеке..." rows="3"></textarea>
+                </div>
+
+                <input type="hidden" id="editingId" value="">
+                <input type="hidden" id="relatedToId" value="">
+                <input type="hidden" id="relatedRole" value="">
+
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-cancel" id="btnCancelForm">Отмена</button>
+                    <button type="submit" class="btn btn-save" id="btnSaveForm">💾 Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ─── Модалка быстрого добавления родственника (+ Родственник) ─── -->
+    <div class="modal-overlay" id="relSelectOverlay">
+        <div class="modal modal-quick-rel" id="relSelectModal">
+            <button class="modal-close" id="relSelectClose">&times;</button>
+            <div class="quick-rel-header">
+                <div class="quick-rel-icon-wrap" id="quickRelIconWrap">
+                    <span class="quick-rel-avatar" id="quickRelAvatar">👤</span>
+                </div>
+                <h3 class="quick-rel-title" id="quickRelTitle">Добавить родственника</h3>
+                <p class="quick-rel-sub" id="quickRelSubtitle">Кого вы хотите добавить?</p>
+            </div>
+            <div class="quick-rel-grid" id="quickRelGrid"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p id="footerText">Семейное Древо &bull; Сделано с ❤️</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

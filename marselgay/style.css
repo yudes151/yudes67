@@ -1,0 +1,2008 @@
+/* ============================================
+   СЕМЕЙНОЕ ДРЕВО — СТИЛИ (МУЛЬТИ-ТЕМА)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ─── ТЕМА ПО УМОЛЧАНИЮ: Глубокий Космос (Deep Space Galaxy) ─── */
+:root, [data-theme="theme-space"] {
+    --bg-primary: #03030e;
+    --bg-secondary: #07091c;
+    --bg-card: rgba(11, 14, 38, 0.78);
+    --bg-card-hover: rgba(18, 24, 60, 0.92);
+    --border-card: rgba(56, 189, 248, 0.24);
+    --border-card-hover: rgba(168, 85, 247, 0.65);
+    --accent: #38bdf8;
+    --accent-secondary: #c084fc;
+    --accent-glow: rgba(56, 189, 248, 0.42);
+    --gold: #fde047;
+    --gold-glow: rgba(253, 224, 71, 0.35);
+    --text-primary: #f0f6fc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #7983a3;
+    --deceased-badge: #fb7185;
+    --alive-badge: #38bdf8;
+    --danger: #fb7185;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+    --shadow-hover: 0 16px 55px rgba(56, 189, 248, 0.28);
+    --glow-color-1: #0284c7;
+    --glow-color-2: #7c3aed;
+    --glow-color-3: #db2777;
+    --btn-gradient: linear-gradient(135deg, #0284c7, #7c3aed, #ec4899);
+    --btn-gradient-hover: linear-gradient(135deg, #38bdf8, #a855f7, #f43f5e);
+    --title-gradient: linear-gradient(135deg, #7dd3fc, #c084fc, #f472b6, #fde047);
+    --radius: 16px;
+    --radius-sm: 10px;
+}
+
+/* ─── ТЕМА: Неоновый Аметист (Amethyst & Rose Quartz) ─── */
+[data-theme="theme-amethyst"] {
+    --bg-primary: #0a0814;
+    --bg-secondary: #120e22;
+    --bg-card: rgba(26, 20, 48, 0.72);
+    --bg-card-hover: rgba(38, 30, 68, 0.88);
+    --border-card: rgba(192, 132, 252, 0.2);
+    --border-card-hover: rgba(236, 72, 153, 0.5);
+    --accent: #c084fc;
+    --accent-secondary: #f472b6;
+    --accent-glow: rgba(192, 132, 252, 0.35);
+    --gold: #fbbf24;
+    --gold-glow: rgba(251, 191, 36, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #80769e;
+    --deceased-badge: #fb7185;
+    --alive-badge: #34d399;
+    --danger: #fb7185;
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 16px 50px rgba(192, 132, 252, 0.22);
+    --glow-color-1: #9333ea;
+    --glow-color-2: #db2777;
+    --glow-color-3: #4f46e5;
+    --btn-gradient: linear-gradient(135deg, #a855f7, #ec4899);
+    --btn-gradient-hover: linear-gradient(135deg, #b96bf9, #f472b6);
+    --title-gradient: linear-gradient(135deg, #e879f9, #c084fc, #fbbf24);
+}
+
+/* ─── ТЕМА: Королевский Изумруд (Royal Emerald) ─── */
+[data-theme="theme-emerald"] {
+    --bg-primary: #04130f;
+    --bg-secondary: #0a211b;
+    --bg-card: rgba(13, 41, 34, 0.72);
+    --bg-card-hover: rgba(20, 58, 48, 0.88);
+    --border-card: rgba(52, 211, 153, 0.22);
+    --border-card-hover: rgba(245, 158, 11, 0.5);
+    --accent: #34d399;
+    --accent-secondary: #fbbf24;
+    --accent-glow: rgba(52, 211, 153, 0.35);
+    --gold: #fbbf24;
+    --gold-glow: rgba(251, 191, 36, 0.3);
+    --text-primary: #f0fdf4;
+    --text-secondary: #bbf7d0;
+    --text-muted: #648a7b;
+    --deceased-badge: #f87171;
+    --alive-badge: #34d399;
+    --danger: #f87171;
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 16px 50px rgba(52, 211, 153, 0.22);
+    --glow-color-1: #059669;
+    --glow-color-2: #d97706;
+    --glow-color-3: #0891b2;
+    --btn-gradient: linear-gradient(135deg, #10b981, #059669);
+    --btn-gradient-hover: linear-gradient(135deg, #34d399, #10b981);
+    --title-gradient: linear-gradient(135deg, #6ee7b7, #34d399, #fbbf24);
+}
+
+/* ─── ТЕМА: Теплый Янтарь (Warm Amber Sunset) ─── */
+[data-theme="theme-amber"] {
+    --bg-primary: #120904;
+    --bg-secondary: #1e1108;
+    --bg-card: rgba(43, 24, 14, 0.72);
+    --bg-card-hover: rgba(61, 34, 20, 0.88);
+    --border-card: rgba(251, 191, 36, 0.22);
+    --border-card-hover: rgba(248, 113, 113, 0.5);
+    --accent: #fbbf24;
+    --accent-secondary: #f87171;
+    --accent-glow: rgba(251, 191, 36, 0.35);
+    --gold: #fb923c;
+    --gold-glow: rgba(251, 146, 60, 0.3);
+    --text-primary: #fffbeb;
+    --text-secondary: #fef08a;
+    --text-muted: #997b61;
+    --deceased-badge: #ef4444;
+    --alive-badge: #34d399;
+    --danger: #ef4444;
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 16px 50px rgba(251, 191, 36, 0.22);
+    --glow-color-1: #d97706;
+    --glow-color-2: #dc2626;
+    --glow-color-3: #b45309;
+    --btn-gradient: linear-gradient(135deg, #f59e0b, #d97706);
+    --btn-gradient-hover: linear-gradient(135deg, #fbbf24, #f59e0b);
+    --title-gradient: linear-gradient(135deg, #fed7aa, #fbbf24, #f87171);
+}
+
+/* ─── ТЕМА: Морская Лазурь (Classic Ocean) ─── */
+[data-theme="theme-classic"] {
+    --bg-primary: #0a131c;
+    --bg-secondary: #121e2c;
+    --bg-card: rgba(22, 38, 56, 0.75);
+    --bg-card-hover: rgba(30, 52, 76, 0.9);
+    --border-card: rgba(56, 189, 248, 0.2);
+    --border-card-hover: rgba(78, 205, 196, 0.5);
+    --accent: #38bdf8;
+    --accent-secondary: #4ecdc4;
+    --accent-glow: rgba(56, 189, 248, 0.35);
+    --gold: #f5c842;
+    --gold-glow: rgba(245, 200, 66, 0.3);
+    --text-primary: #f0f9ff;
+    --text-secondary: #bae6fd;
+    --text-muted: #64748b;
+    --deceased-badge: #f43f5e;
+    --alive-badge: #2ecc71;
+    --danger: #f43f5e;
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+    --shadow-hover: 0 16px 50px rgba(56, 189, 248, 0.22);
+    --glow-color-1: #0284c7;
+    --glow-color-2: #0d9488;
+    --glow-color-3: #6366f1;
+    --btn-gradient: linear-gradient(135deg, #38bdf8, #0284c7);
+    --btn-gradient-hover: linear-gradient(135deg, #7dd3fc, #38bdf8);
+    --title-gradient: linear-gradient(135deg, #7dd3fc, #38bdf8, #f5c842);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ─── Фоновые свечения и Космос ─── */
+.bg-decoration {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; overflow: hidden;
+}
+
+/* Звёздное небо (Starfield) */
+.starfield {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+.star {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+}
+@keyframes starTwinkle {
+    0% { opacity: 0.2; transform: scale(0.75); }
+    50% { opacity: 1; transform: scale(1.3); filter: drop-shadow(0 0 5px #38bdf8); }
+    100% { opacity: 0.3; transform: scale(0.85); }
+}
+
+/* Метеоры (Падающие звёзды) */
+.shooting-stars-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(-45deg, #ffffff, rgba(56, 189, 248, 0.9), transparent);
+    border-radius: 999px;
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.95));
+    animation: shootMeteor 8.5s ease-in-out infinite;
+    opacity: 0;
+}
+.star-1 {
+    top: 12%;
+    left: 85%;
+    width: 140px;
+    animation-delay: 1.5s;
+}
+.star-2 {
+    top: 40%;
+    left: 92%;
+    width: 110px;
+    animation-delay: 5.2s;
+}
+.star-3 {
+    top: 65%;
+    left: 78%;
+    width: 130px;
+    animation-delay: 8.8s;
+}
+@keyframes shootMeteor {
+    0% { transform: rotate(-35deg) translateX(0); opacity: 0; }
+    5% { opacity: 1; }
+    16% { transform: rotate(-35deg) translateX(-750px); opacity: 0; }
+    100% { transform: rotate(-35deg) translateX(-750px); opacity: 0; }
+}
+
+.glow {
+    position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.22;
+    transition: background 0.6s ease;
+}
+.glow-1 {
+    width: 700px; height: 700px; background: var(--glow-color-1);
+    top: -200px; right: -150px; animation: bgDrift1 14s ease-in-out infinite;
+}
+.glow-2 {
+    width: 550px; height: 550px; background: var(--glow-color-2);
+    bottom: -150px; left: -100px; animation: bgDrift2 16s ease-in-out infinite;
+}
+.glow-3 {
+    width: 450px; height: 450px; background: var(--glow-color-3);
+    top: 45%; left: 50%; transform: translate(-50%, -50%);
+    animation: bgDrift1 19s ease-in-out infinite reverse;
+}
+
+/* ============================================
+   ШАПКА + ТУЛБАР
+   ============================================ */
+.header {
+    text-align: center; padding: 42px 20px 14px;
+    position: relative; z-index: 1;
+}
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 700;
+    background: var(--title-gradient);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 8px; letter-spacing: -0.5px;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.25);
+}
+.subtitle {
+    font-size: 1.05rem; color: var(--text-secondary);
+    font-weight: 400; margin-bottom: 24px; opacity: 0.9;
+}
+
+.toolbar {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    flex-wrap: wrap; max-width: 720px; margin: 0 auto;
+}
+
+/* Поиск */
+.search-box {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--bg-card);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-card);
+    border-radius: 14px; padding: 10px 16px; flex: 1; min-width: 220px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.search-box:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+    background: var(--bg-card-hover);
+}
+.search-icon { font-size: 1rem; opacity: 0.8; }
+.search-box input {
+    flex: 1; background: none; border: none; outline: none;
+    color: var(--text-primary); font-size: 0.92rem; font-family: inherit;
+}
+.search-box input::placeholder { color: var(--text-muted); }
+.search-clear {
+    background: none; border: none; color: var(--text-muted);
+    font-size: 1.3rem; cursor: pointer; display: none; transition: color 0.2s;
+}
+.search-clear.visible { display: block; }
+.search-clear:hover { color: var(--text-primary); }
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 12px; border: none;
+    font-family: inherit; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap; backdrop-filter: blur(8px);
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-add {
+    background: var(--btn-gradient);
+    color: #ffffff;
+    box-shadow: 0 4px 16px var(--accent-glow);
+}
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px var(--accent-glow);
+    filter: brightness(1.1);
+}
+.btn-add span { font-size: 1.15rem; font-weight: 700; line-height: 1; }
+
+.btn-theme {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.btn-theme:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent-glow);
+    transform: translateY(-2px);
+    background: var(--bg-card-hover);
+}
+
+.btn-edit {
+    background: rgba(192, 132, 252, 0.14);
+    color: var(--accent);
+    border: 1px solid var(--border-card);
+}
+.btn-edit:hover {
+    background: rgba(192, 132, 252, 0.26);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background: rgba(244, 63, 94, 0.12);
+    color: var(--danger);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+}
+.btn-delete:hover {
+    background: rgba(244, 63, 94, 0.24);
+    border-color: var(--danger);
+    transform: translateY(-1px);
+}
+
+.btn-save {
+    background: var(--btn-gradient);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 16px var(--accent-glow);
+}
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px var(--accent-glow);
+    filter: brightness(1.1);
+}
+
+.btn-cancel {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-card);
+}
+.btn-cancel:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.btn-photo {
+    background: var(--bg-card);
+    color: var(--accent);
+    border: 1px solid var(--border-card);
+    cursor: pointer;
+}
+.btn-photo:hover {
+    background: rgba(192, 132, 252, 0.15);
+    border-color: var(--accent);
+}
+
+.btn-remove-photo {
+    background: none; border: none; color: var(--text-muted);
+    font-size: 0.8rem; cursor: pointer; padding: 4px;
+    transition: color 0.2s;
+}
+.btn-remove-photo:hover { color: var(--danger); }
+
+/* ============================================
+   ДЕРЕВО
+   ============================================ */
+.tree-container {
+    position: relative; z-index: 1;
+    max-width: 1280px; margin: 0 auto;
+    padding: 24px 20px 70px;
+}
+
+.generation {
+    margin-bottom: 8px; animation: fadeInUp 0.6s ease forwards; opacity: 0;
+}
+.generation:nth-child(1)  { animation-delay: 0.05s; }
+.generation:nth-child(2)  { animation-delay: 0.1s; }
+.generation:nth-child(3)  { animation-delay: 0.15s; }
+.generation:nth-child(4)  { animation-delay: 0.2s; }
+.generation:nth-child(5)  { animation-delay: 0.25s; }
+.generation:nth-child(6)  { animation-delay: 0.3s; }
+.generation:nth-child(7)  { animation-delay: 0.35s; }
+.generation:nth-child(8)  { animation-delay: 0.4s; }
+.generation:nth-child(9)  { animation-delay: 0.45s; }
+.generation:nth-child(10) { animation-delay: 0.5s; }
+.generation:nth-child(11) { animation-delay: 0.55s; }
+
+.generation-label { text-align: center; margin-bottom: 16px; }
+.generation-label span {
+    display: inline-block;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-card);
+    color: var(--accent);
+    font-size: 0.78rem; font-weight: 600;
+    padding: 6px 18px; border-radius: 24px;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.generation-label span:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+.generation-members {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+}
+
+/* Коннектор */
+.connector { display: flex; justify-content: center; }
+.connector-line {
+    width: 2px; height: 38px;
+    background: linear-gradient(to bottom, var(--accent), rgba(192,132,252,0.06));
+    border-radius: 1px;
+    animation: connectorGrow 0.8s ease forwards;
+}
+
+/* Пустое состояние */
+.empty-state {
+    text-align: center; padding: 70px 20px; color: var(--text-muted);
+}
+.empty-state .empty-icon { font-size: 4.5rem; margin-bottom: 16px; display: block; filter: drop-shadow(0 0 16px var(--accent-glow)); }
+.empty-state h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--text-primary); margin-bottom: 8px; }
+.empty-state p { font-size: 0.95rem; margin-bottom: 22px; color: var(--text-secondary); }
+
+/* Нет результатов поиска */
+.no-results { text-align: center; padding: 50px 20px; color: var(--text-muted); }
+.no-results .no-icon { font-size: 3.5rem; display: block; margin-bottom: 12px; }
+
+/* ============================================
+   КАРТОЧКА ЧЕЛОВЕКА
+   ============================================ */
+.person-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius);
+    padding: 13px 10px; width: 148px; min-width: 148px; max-width: 155px;
+    text-align: center; cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative; overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.person-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--gold));
+    opacity: 0; transition: opacity 0.3s;
+}
+.person-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-card-hover);
+}
+.person-card:hover::before { opacity: 1; }
+.person-card:hover .person-name { color: var(--accent); }
+.person-card:hover .person-photo-ring {
+    border-color: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+}
+.person-card:hover .photo-placeholder { transform: scale(1.08) rotate(3deg); }
+
+/* Подсветка поиска */
+.person-card.search-match {
+    border-color: var(--gold);
+    box-shadow: 0 0 24px var(--gold-glow);
+    transform: translateY(-2px) scale(1.02);
+}
+.person-card.search-dim { opacity: 0.25; transform: scale(0.95); }
+
+/* Карточка «Я» */
+.person-card.is-me {
+    border-color: var(--accent);
+    background: linear-gradient(150deg, var(--bg-card), rgba(192, 132, 252, 0.12));
+    box-shadow: var(--shadow), 0 0 22px var(--accent-glow);
+    width: 176px; min-width: 176px; max-width: 184px; padding: 16px 12px;
+    animation: pulseGlow 3.5s ease-in-out infinite, borderShimmer 4s ease-in-out infinite;
+}
+.person-card.is-me .person-photo-ring {
+    border-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent-glow);
+    width: 68px; height: 68px;
+    animation: float 4s ease-in-out infinite;
+}
+.person-card.is-me .person-name { font-size: 1.1rem; color: var(--accent); }
+.person-card.is-me .photo-placeholder { font-size: 1.85rem; }
+
+/* Фото */
+.person-photo-wrapper { display: flex; justify-content: center; margin-bottom: 8px; }
+.person-photo-ring {
+    width: 56px; height: 56px; border-radius: 50%;
+    border: 2px solid var(--border-card); padding: 2.5px;
+    transition: all 0.35s ease;
+    position: relative;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+.person-photo-ring::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px dashed rgba(56, 189, 248, 0.3);
+    opacity: 0.7;
+    animation: orbitRotate 16s linear infinite;
+    pointer-events: none;
+}
+@keyframes orbitRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.person-photo {
+    width: 100%; height: 100%; border-radius: 50%;
+    object-fit: cover; background: var(--bg-secondary);
+}
+.photo-placeholder {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card-hover));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.45rem; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.person-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.94rem; font-weight: 600;
+    color: var(--text-primary); margin-bottom: 2px;
+    line-height: 1.25; transition: color 0.2s;
+}
+.person-relation {
+    font-size: 0.72rem; color: var(--text-secondary);
+    margin-bottom: 3px; font-weight: 500;
+}
+
+/* Чей сын / Чья дочь на карточке */
+.person-whose-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 4px; font-size: 0.67rem; font-weight: 600;
+    padding: 2px 7px; border-radius: 7px;
+    margin: 2px auto 3px; max-width: 98%;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    backdrop-filter: blur(4px);
+    transition: all 0.25s ease;
+}
+.person-whose-badge .whose-icon { font-size: 0.72rem; flex-shrink: 0; }
+.person-whose-badge .whose-label { opacity: 0.85; font-weight: 500; }
+.person-whose-badge .whose-val { overflow: hidden; text-overflow: ellipsis; font-weight: 700; }
+
+.whose-son {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+}
+.whose-daughter {
+    color: #f472b6;
+    background: rgba(244, 114, 182, 0.12);
+    border: 1px solid rgba(244, 114, 182, 0.35);
+}
+
+/* Профессия на карточке */
+.person-profession {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 3px; font-size: 0.66rem; font-weight: 500;
+    color: var(--gold);
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    padding: 2px 6px; border-radius: 6px;
+    margin: 2px auto 3px; max-width: 96%;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    backdrop-filter: blur(4px);
+    transition: all 0.25s ease;
+}
+.person-profession .prof-icon { font-size: 0.68rem; flex-shrink: 0; }
+.person-profession .prof-text { overflow: hidden; text-overflow: ellipsis; }
+
+/* Музыка на карточке */
+.person-music {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 3px; font-size: 0.65rem; font-weight: 500;
+    color: var(--accent-secondary);
+    background: rgba(236, 72, 153, 0.1);
+    border: 1px solid rgba(236, 72, 153, 0.25);
+    padding: 2px 6px; border-radius: 6px;
+    margin: 2px auto 4px; max-width: 96%;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    backdrop-filter: blur(4px);
+    transition: all 0.25s ease;
+}
+.person-music .music-icon { font-size: 0.68rem; flex-shrink: 0; }
+.person-music .music-text { overflow: hidden; text-overflow: ellipsis; }
+
+/* Кнопка + Родственник на карточке */
+.card-add-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(192, 132, 252, 0.16);
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.62rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(6px);
+    z-index: 5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.card-add-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: scale(1.06);
+    box-shadow: 0 0 12px var(--accent-glow);
+    border-color: var(--accent);
+}
+.card-add-btn .add-plus {
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.card-add-btn .add-txt {
+    font-size: 0.58rem;
+    letter-spacing: 0.2px;
+}
+
+.person-years {
+    font-size: 0.7rem; color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.status-badge {
+    display: inline-block; font-size: 0.62rem; font-weight: 600;
+    padding: 3px 9px; border-radius: 12px;
+    text-transform: uppercase; letter-spacing: 0.6px;
+}
+.status-alive {
+    background: rgba(52, 211, 153, 0.14);
+    color: var(--alive-badge);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+.status-deceased {
+    background: rgba(244, 63, 94, 0.12);
+    color: var(--deceased-badge);
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    animation: deceasedPulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   МОДАЛЬНЫЕ ОКНА
+   ============================================ */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(6, 4, 12, 0.88);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    z-index: 1000; display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 20px;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-card);
+    border-radius: 22px; max-width: 470px; width: 100%; padding: 32px 28px;
+    position: relative; transform: translateY(30px) scale(0.95);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.65), 0 0 30px var(--accent-glow);
+    max-height: 90vh; overflow-y: auto;
+}
+.modal-overlay.active .modal { transform: translateY(0) scale(1); }
+
+.modal-close {
+    position: absolute; top: 14px; right: 18px; background: none; border: none;
+    color: var(--text-muted); font-size: 1.8rem; cursor: pointer;
+    transition: all 0.2s; line-height: 1; z-index: 1;
+}
+.modal-close:hover { color: var(--text-primary); transform: rotate(90deg); }
+
+/* Модалка просмотра */
+.modal-photo-wrapper { display: flex; justify-content: center; margin-bottom: 20px; }
+.modal-photo {
+    width: 124px; height: 124px; border-radius: 50%;
+    object-fit: cover; border: 3px solid var(--accent);
+    box-shadow: 0 0 25px var(--accent-glow);
+    background: var(--bg-card);
+}
+.modal-info { text-align: center; }
+.modal-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 4px;
+}
+.modal-relation {
+    font-size: 0.9rem; color: var(--accent);
+    margin-bottom: 10px; font-weight: 600;
+}
+
+/* Профессия в модалке просмотра */
+.modal-profession-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(251, 191, 36, 0.12);
+    color: var(--gold);
+    border: 1px solid rgba(251, 191, 36, 0.32);
+    font-size: 0.86rem; font-weight: 600;
+    padding: 5px 14px; border-radius: 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 14px var(--gold-glow);
+}
+.modal-profession-badge .prof-icon { font-size: 0.95rem; }
+
+.modal-dates {
+    display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;
+}
+.date-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg-card); padding: 10px 16px;
+    border-radius: var(--radius-sm); border: 1px solid var(--border-card);
+}
+.date-label { font-size: 0.8rem; color: var(--text-secondary); }
+.date-value { font-size: 0.88rem; font-weight: 600; color: var(--text-primary); }
+
+/* Музыка в модалке просмотра */
+.modal-music-box {
+    display: flex; align-items: center; gap: 12px;
+    background: linear-gradient(135deg, rgba(192, 132, 252, 0.1), rgba(236, 72, 153, 0.12));
+    border: 1px solid rgba(192, 132, 252, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 16px var(--accent-glow);
+    text-align: left;
+}
+.modal-music-box .music-icon {
+    font-size: 1.4rem;
+    animation: musicBounce 2.5s ease-in-out infinite;
+    flex-shrink: 0;
+}
+.modal-music-box .music-details {
+    display: flex; flex-direction: column; gap: 2px;
+    min-width: 0;
+}
+.modal-music-box .music-label {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.modal-music-box .music-value {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+@keyframes musicBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-3px) scale(1.1); }
+}
+
+.modal-bio {
+    font-size: 0.88rem; color: var(--text-secondary);
+    line-height: 1.65; margin-top: 14px; padding-top: 14px;
+    border-top: 1px solid var(--border-card);
+    text-align: left;
+}
+.modal-actions {
+    display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap;
+}
+.btn-add-rel {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    color: #fff;
+    border: none;
+}
+.btn-add-rel:hover {
+    background: linear-gradient(135deg, #c084fc, #818cf8);
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   ФОРМА
+   ============================================ */
+.modal-form { max-width: 500px; }
+.form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; color: var(--text-primary);
+    text-align: center; margin-bottom: 24px;
+}
+
+.form-photo-section {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 10px; margin-bottom: 22px;
+}
+.form-photo-preview {
+    width: 104px; height: 104px; border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px dashed var(--border-card);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; transition: all 0.3s;
+}
+.form-photo-preview:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent-glow);
+}
+.form-photo-placeholder { font-size: 2.6rem; }
+.form-photo-img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+}
+
+.form-group { margin-bottom: 16px; }
+.form-label {
+    display: block; font-size: 0.84rem;
+    color: var(--text-secondary); margin-bottom: 6px; font-weight: 600;
+}
+.form-hint { color: var(--text-muted); font-weight: 400; font-size: 0.76rem; }
+
+.form-input {
+    width: 100%; padding: 11px 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary); font-size: 0.9rem; font-family: inherit;
+    outline: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+    background: var(--bg-card-hover);
+}
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-select {
+    cursor: pointer; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c4b5fd' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+    padding-right: 36px;
+}
+.form-select option { background: var(--bg-secondary); color: var(--text-primary); }
+
+.form-textarea { resize: vertical; min-height: 75px; }
+
+.form-buttons {
+    display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;
+}
+
+/* ============================================
+   ФУТЕР
+   ============================================ */
+.footer {
+    text-align: center; padding: 36px 20px 48px;
+    color: var(--text-muted); font-size: 0.85rem;
+    position: relative; z-index: 1;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+@media (max-width: 768px) {
+    .header h1 { font-size: 2.2rem; }
+    .person-card { width: 145px; padding: 14px 10px; }
+    .person-card.is-me { width: 168px; }
+    .person-photo-ring { width: 62px; height: 62px; }
+    .person-card.is-me .person-photo-ring { width: 74px; height: 74px; }
+    .person-name { font-size: 0.95rem; }
+    .generation-members { gap: 12px; }
+    .modal { padding: 24px 20px; }
+    .toolbar { padding: 0 10px; }
+}
+@media (max-width: 480px) {
+    .header { padding: 30px 14px 10px; }
+    .header h1 { font-size: 1.8rem; }
+    .person-card { width: 128px; padding: 12px 8px; }
+    .person-card.is-me { width: 144px; }
+    .person-photo-ring { width: 52px; height: 52px; }
+    .person-name { font-size: 0.86rem; }
+    .generation-members { gap: 8px; }
+    .toolbar { flex-direction: column; width: 100%; }
+    .search-box { width: 100%; min-width: unset; }
+}
+
+/* ============================================
+   АНИМАЦИИ
+   ============================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 16px var(--accent-glow); }
+    50% { box-shadow: 0 0 32px var(--accent-glow), 0 0 50px rgba(192,132,252,0.18); }
+}
+@keyframes borderShimmer {
+    0% { border-color: rgba(192, 132, 252, 0.35); }
+    50% { border-color: rgba(251, 191, 36, 0.45); }
+    100% { border-color: rgba(192, 132, 252, 0.35); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+@keyframes bgDrift1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(45px, -35px) scale(1.08); }
+    66% { transform: translate(-25px, 25px) scale(0.94); }
+}
+@keyframes bgDrift2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-35px, 45px) scale(1.06); }
+    66% { transform: translate(30px, -20px) scale(0.92); }
+}
+@keyframes connectorGrow {
+    from { height: 0; opacity: 0; }
+    to { height: 38px; opacity: 1; }
+}
+@keyframes deceasedPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+@keyframes particleFloat {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) translateX(50px) scale(0); opacity: 0; }
+}
+
+.particle {
+    position: fixed; width: 4px; height: 4px; border-radius: 50%;
+    pointer-events: none; z-index: 0; animation: particleFloat linear forwards;
+}
+
+/* ============================================
+   ВЕТВИ ДРЕВА: ЛИНИИ ПАПЫ И МАМЫ, ПОЛОСЫ И СВЯЗИ
+   ============================================ */
+
+.person-card.side-paternal {
+    border-color: rgba(251, 191, 36, 0.28);
+}
+.person-card.side-paternal:hover {
+    border-color: var(--gold);
+    box-shadow: 0 16px 45px rgba(251, 191, 36, 0.22);
+}
+.person-card.side-maternal {
+    border-color: rgba(236, 72, 153, 0.28);
+}
+.person-card.side-maternal:hover {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 16px 45px rgba(236, 72, 153, 0.22);
+}
+
+/* Строка с двумя ветвями (Линия Папы и Линия Мамы) */
+.tree-branch-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 16px;
+    position: relative;
+}
+
+.branch-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 290px;
+    position: relative;
+}
+
+.branch-col-header {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branch-col-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.paternal-header .branch-col-badge {
+    background: rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(251, 191, 36, 0.38);
+    color: var(--gold);
+    box-shadow: 0 0 16px var(--gold-glow);
+}
+.paternal-header .branch-col-badge:hover {
+    box-shadow: 0 0 24px var(--gold-glow);
+    transform: translateY(-1px);
+}
+
+.maternal-header .branch-col-badge {
+    background: rgba(236, 72, 153, 0.12);
+    border: 1px solid rgba(236, 72, 153, 0.38);
+    color: var(--accent-secondary);
+    box-shadow: 0 0 16px rgba(236, 72, 153, 0.32);
+}
+.maternal-header .branch-col-badge:hover {
+    box-shadow: 0 0 24px rgba(236, 72, 153, 0.45);
+    transform: translateY(-1px);
+}
+
+/* ─── ПОЛОСА БРАТЬЕВ И СЕСТЁР (Sibling Strip) ─── */
+.sibling-strip {
+    width: 100%;
+    position: relative;
+    padding: 24px 16px 16px;
+    border-radius: 22px;
+    backdrop-filter: blur(12px);
+    background: rgba(18, 14, 34, 0.55);
+    border: 2px solid;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+/* Полоса Папы */
+.sibling-strip.strip-paternal {
+    border-color: rgba(251, 191, 36, 0.38);
+    background: linear-gradient(145deg, rgba(251, 191, 36, 0.08), rgba(20, 16, 36, 0.7));
+    box-shadow: 0 6px 30px rgba(251, 191, 36, 0.1);
+}
+.sibling-strip.strip-paternal:hover {
+    border-color: var(--gold);
+    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.2);
+}
+
+/* Полоса Мамы */
+.sibling-strip.strip-maternal {
+    border-color: rgba(236, 72, 153, 0.38);
+    background: linear-gradient(145deg, rgba(236, 72, 153, 0.08), rgba(20, 16, 36, 0.7));
+    box-shadow: 0 6px 30px rgba(236, 72, 153, 0.1);
+}
+.sibling-strip.strip-maternal:hover {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 10px 40px rgba(236, 72, 153, 0.2);
+}
+
+/* Полоса для центральных братьев и сестёр */
+.sibling-strip.strip-center {
+    border-color: rgba(192, 132, 252, 0.38);
+    background: linear-gradient(145deg, rgba(192, 132, 252, 0.08), rgba(20, 16, 36, 0.7));
+    box-shadow: 0 6px 30px rgba(192, 132, 252, 0.1);
+}
+
+/* Верхняя светящаяся планка-бейдж полосы */
+.strip-header-bar {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 14px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+.strip-paternal .strip-header-bar {
+    background: var(--bg-primary);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 14px var(--gold-glow);
+}
+.strip-maternal .strip-header-bar {
+    background: var(--bg-primary);
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    box-shadow: 0 0 14px rgba(236, 72, 153, 0.4);
+}
+.strip-center .strip-header-bar {
+    background: var(--bg-primary);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.strip-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Соединительный мост / линия между братьями и сёстрами */
+.sibling-bridge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    position: relative;
+}
+.sibling-bridge-line {
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    box-shadow: 0 0 10px var(--accent-glow);
+    position: relative;
+}
+.strip-paternal .sibling-bridge-line {
+    background: linear-gradient(90deg, var(--gold), rgba(251, 191, 36, 0.5));
+    box-shadow: 0 0 10px var(--gold-glow);
+}
+.strip-maternal .sibling-bridge-line {
+    background: linear-gradient(90deg, var(--accent-secondary), rgba(236, 72, 153, 0.5));
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+}
+.strip-center .sibling-bridge-line {
+    background: linear-gradient(90deg, var(--accent), rgba(192, 132, 252, 0.5));
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+.sibling-bridge-tag {
+    display: none !important;
+}
+
+/* ─── СОЮЗ РОДИТЕЛЕЙ (Папа + Мама) ─── */
+.union-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-shrink: 0;
+    padding: 0 4px;
+    min-width: 100px;
+    z-index: 5;
+    position: relative;
+}
+.union-heart {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.35), rgba(192, 132, 252, 0.35));
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    box-shadow: 0 0 24px var(--accent-glow);
+    animation: unionPulse 2.8s ease-in-out infinite;
+    cursor: default;
+    transition: transform 0.25s ease;
+}
+.union-heart:hover {
+    transform: scale(1.15) rotate(6deg);
+}
+.union-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+@keyframes unionPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 16px var(--accent-glow); }
+    50% { transform: scale(1.08); box-shadow: 0 0 28px rgba(236, 72, 153, 0.55); }
+}
+
+/* Кнопка "Пример ветвей" в шапке */
+.btn-demo {
+    background: rgba(52, 211, 153, 0.12);
+    color: var(--alive-badge);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.btn-demo:hover {
+    background: var(--alive-badge);
+    color: #04130f;
+    box-shadow: 0 0 18px rgba(52, 211, 153, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Баннер родственника в форме */
+.relative-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(192, 132, 252, 0.2), rgba(236, 72, 153, 0.16));
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 16px var(--accent-glow);
+    animation: fadeInUp 0.3s ease;
+}
+.relative-banner .banner-icon { font-size: 1.35rem; }
+.relative-banner .banner-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.relative-banner .btn-clear-relative {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+    padding: 0 4px;
+}
+.relative-banner .btn-clear-relative:hover { color: var(--danger); }
+
+/* Легенда-подсказка вверху древа */
+.tree-legend {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0 auto 22px;
+    padding: 10px 18px;
+    background: rgba(18, 14, 34, 0.55);
+    border: 1px solid var(--border-card);
+    border-radius: 30px;
+    max-width: 980px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+.legend-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+}
+.legend-chip strong { color: var(--text-primary); }
+.chip-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.dot-purple { background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+.dot-gold { background: var(--gold); box-shadow: 0 0 8px var(--gold-glow); }
+.dot-cyan { background: var(--accent-secondary); box-shadow: 0 0 8px rgba(236, 72, 153, 0.5); }
+
+/* Бейджи зон */
+.zone-badge-wrap {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.zone-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 4px 14px;
+    border-radius: 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-card);
+    color: var(--text-secondary);
+    backdrop-filter: blur(6px);
+}
+.zone-badge.badge-me {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(192, 132, 252, 0.12);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+.zone-badge.badge-paternal {
+    color: var(--gold);
+    border-color: rgba(251, 191, 36, 0.4);
+    background: rgba(251, 191, 36, 0.08);
+}
+.zone-badge.badge-maternal {
+    color: var(--accent-secondary);
+    border-color: rgba(236, 72, 153, 0.4);
+    background: rgba(236, 72, 153, 0.08);
+}
+
+/* Модалка быстрого выбора (+ Родственник) */
+.modal-quick-rel {
+    max-width: 660px;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 26px;
+    width: 95%;
+}
+.quick-rel-header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+.quick-rel-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card-hover));
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+.quick-rel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.quick-rel-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.quick-rel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.quick-rel-cat-header {
+    grid-column: span 2;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    padding: 10px 4px 4px;
+    border-bottom: 1px solid var(--border-card);
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.quick-rel-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 11px 13px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-primary);
+}
+.quick-rel-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+.quick-rel-btn-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+.quick-rel-btn-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.quick-rel-btn-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.quick-rel-btn-desc {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: 1px;
+}
+.quick-rel-card.full-width {
+    grid-column: span 2;
+    justify-content: center;
+    text-align: center;
+    background: rgba(192, 132, 252, 0.08);
+    border-style: dashed;
+}
+.quick-rel-card.full-width:hover {
+    background: rgba(192, 132, 252, 0.16);
+    border-style: solid;
+}
+
+/* ─── НОВЫЙ МАКЕТ: МОЛОДОЕ ПОКОЛЕНИЕ (ДВ. СЁСТРЫ СЛЕВА ── Я И РОДНЫЕ ── ДВ. БРАТЬЯ СПРАВА) ─── */
+.youth-level-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto;
+    position: relative;
+    flex-wrap: wrap;
+    max-width: 1450px;
+    width: 100%;
+}
+
+.cousins-wing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 14px;
+    border-radius: 20px;
+    background: rgba(18, 14, 34, 0.45);
+    border: 1.5px dashed var(--border-card);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    max-width: 380px;
+    flex: 1;
+}
+
+.sisters-wing {
+    border-color: rgba(244, 114, 182, 0.35);
+    background: linear-gradient(145deg, rgba(244, 114, 182, 0.04), rgba(18, 14, 34, 0.55));
+}
+.sisters-wing:hover {
+    border-color: rgba(244, 114, 182, 0.6);
+    box-shadow: 0 6px 25px rgba(244, 114, 182, 0.12);
+}
+
+.brothers-wing {
+    border-color: rgba(56, 189, 248, 0.35);
+    background: linear-gradient(145deg, rgba(56, 189, 248, 0.04), rgba(18, 14, 34, 0.55));
+}
+.brothers-wing:hover {
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 6px 25px rgba(56, 189, 248, 0.12);
+}
+
+.cousins-cards-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-wing-add {
+    margin-top: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed var(--border-card);
+    color: var(--text-secondary);
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.btn-wing-add:hover {
+    background: var(--bg-card-hover);
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.me-generation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 20px;
+    background: rgba(18, 14, 34, 0.35);
+    border: 1px solid var(--border-card);
+    position: relative;
+    flex-wrap: wrap;
+    flex: 2;
+    min-width: 320px;
+}
+
+.me-brothers-group, .me-sisters-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dashed-add-placeholder {
+    width: 135px;
+    min-width: 135px;
+    padding: 13px 8px;
+    border: 1.5px dashed var(--border-card);
+    border-radius: var(--radius);
+    background: rgba(192, 132, 252, 0.03);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+.dashed-add-placeholder:hover {
+    border-color: var(--accent);
+    background: rgba(192, 132, 252, 0.09);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 14px var(--accent-glow);
+}
+.dashed-add-placeholder .ph-icon { font-size: 1.35rem; margin-bottom: 3px; }
+.dashed-add-placeholder .ph-text { font-size: 0.72rem; font-weight: 600; }
+
+/* Соединительная стрела вниз от поколения Марселя к родителям */
+.tree-connector-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 16px;
+    position: relative;
+}
+.tree-connector-down .conn-line {
+    width: 2px;
+    height: 38px;
+    background: linear-gradient(to bottom, var(--accent), rgba(192, 132, 252, 0.2));
+}
+.tree-connector-down .conn-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    background: var(--bg-secondary);
+    padding: 3px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-card);
+    margin-top: -10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Строка родителей: [Родственники Папы ── Папа] ── [💍 ПАПА ❤️ МАМА] ── [Мама ── Родственники Мамы] */
+.parents-generation-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.parents-wing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 22px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex: 1 1 0;
+    min-width: 320px;
+    box-sizing: border-box;
+}
+.paternal-wing {
+    background: linear-gradient(145deg, rgba(251, 191, 36, 0.05), rgba(18, 14, 34, 0.5));
+    border: 2px solid rgba(251, 191, 36, 0.35);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.06);
+}
+.paternal-wing:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(251, 191, 36, 0.15);
+}
+.maternal-wing {
+    background: linear-gradient(145deg, rgba(236, 72, 153, 0.05), rgba(18, 14, 34, 0.5));
+    border: 2px solid rgba(236, 72, 153, 0.35);
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.06);
+}
+.maternal-wing:hover {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 8px 30px rgba(236, 72, 153, 0.15);
+}
+
+.parents-cards-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Родители папы и мамы снизу */
+.grandparents-level-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.grandparents-wing-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 320px;
+}
+.grandparents-cards-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(18, 14, 34, 0.35);
+    border: 1px solid var(--border-card);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+    .parents-generation-row {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .parents-wing {
+        width: 100%;
+        min-width: auto;
+    }
+    .grandparents-level-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .grandparents-wing-box {
+        width: 100%;
+        min-width: auto;
+    }
+    .youth-level-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cousins-wing, .me-generation-container {
+        width: 100%;
+        min-width: auto;
+    }
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .tree-branch-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .union-node {
+        margin: 16px 0;
+    }
+    .branch-col {
+        width: 100%;
+        max-width: 100%;
+    }
+    .quick-rel-grid {
+        grid-template-columns: 1fr;
+    }
+    .quick-rel-card.full-width {
+        grid-column: span 1;
+    }
+}
+
+/* ============================================
+   ЭКРАН ПРИВЕТСТВИЯ («ЗАЙТИ В СЕМЬЮ»)
+   ============================================ */
+.welcome-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: radial-gradient(ellipse at center, rgba(20, 14, 40, 0.94) 0%, rgba(6, 4, 14, 0.98) 100%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.55s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.welcome-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+    pointer-events: none;
+}
+
+.welcome-card {
+    max-width: 580px;
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card-hover);
+    border-radius: 28px;
+    padding: 44px 34px;
+    text-align: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 50px var(--accent-glow);
+    position: relative;
+    overflow: hidden;
+    animation: welcomeCardIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.welcome-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+@keyframes welcomeCardIn {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.welcome-emblem {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emblem-halo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary), var(--gold));
+    opacity: 0.45;
+    filter: blur(14px);
+    animation: haloPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes haloPulse {
+    0% { transform: scale(0.92); opacity: 0.35; }
+    100% { transform: scale(1.15); opacity: 0.6; }
+}
+
+.emblem-icon {
+    position: relative;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card-hover));
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: var(--title-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.welcome-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 26px;
+}
+
+.welcome-lang-box {
+    margin-bottom: 26px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.welcome-lang-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.lang-tabs {
+    display: inline-flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.lang-tab-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--border-card);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.lang-tab-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.lang-tab-btn.active {
+    background: var(--btn-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.btn-enter-family {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 38px;
+    border-radius: 26px;
+    font-size: 1.12rem;
+    font-weight: 700;
+    font-family: inherit;
+    background: var(--btn-gradient);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 30px var(--accent-glow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-enter-family:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 40px var(--accent-glow);
+    filter: brightness(1.12);
+}
+
+.btn-enter-family:active {
+    transform: scale(0.97);
+}
+
+.btn-enter-sparkle { font-size: 1.25rem; }
+.btn-enter-arrow { font-size: 1.15rem; transition: transform 0.25s ease; }
+.btn-enter-family:hover .btn-enter-arrow { transform: translateX(4px); }
+
+/* ─── ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА В ШАПКЕ ─── */
+.lang-toolbar-switch {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 3px;
+    gap: 4px;
+}
+
+.lang-tool-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-tool-btn:hover {
+    color: var(--text-primary);
+}
+
+.lang-tool-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.btn-welcome-gate {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-card);
+}
+.btn-welcome-gate:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+    transform: translateY(-2px);
+    background: var(--bg-card-hover);
+}
+
+/* ─── ПОЛЕ "ЧЕЙ СЫН / ЧЬЯ ДОЧЬ" В ФОРМЕ ─── */
+.input-with-select {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.input-with-select .form-input {
+    flex: 1;
+}
+.form-select-mini {
+    max-width: 180px;
+    font-size: 0.78rem;
+    padding: 10px 10px;
+    cursor: pointer;
+    background-color: var(--bg-card-hover);
+}
+
+/* Бейдж в модалке просмотра */
+.modal-whose-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #38bdf8;
+    font-size: 0.86rem;
+    margin-bottom: 12px;
+}
+.modal-whose-badge strong {
+    color: #f0f9ff;
+    font-weight: 700;
+}
